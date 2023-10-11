@@ -1,6 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect } from 'react';
+import axios from 'axios';
+
+
 
 function App() {
 
@@ -9,7 +12,7 @@ function App() {
     fetch('https://jsonplaceholder.typicode.com/todos/')
       .then(response => response.json())
       .then(json => {
-        console.log(json)
+        // console.log(json)
       })
       .catch(e => {
         console.log(e)
@@ -19,7 +22,20 @@ function App() {
 
 
   //Axio API call 
-  useEffect(() => { }, [
+  useEffect(() => {
+    axios.get('https://jsonplaceholder.typicode.com/todos/')
+      .then(function (response) {
+        // handle success
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .finally(function () {
+        // always executed
+      });
+  }, [
 
   ]);
 
