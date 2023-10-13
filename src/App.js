@@ -16,9 +16,11 @@ function App() {
   const [selectedUserId, setSelectedUserId] = useState('');
 
   const handleUserSelected = (id) => {
-    console.log(id);
+    // console.log(id);
+    setSelectedUserId(id);
   };
 
+  console.log(selectedUserId);
   //Normal API call 
   // useEffect(() => {
   //   fetch('https://jsonplaceholder.typicode.com/todos/')
