@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import PostLayouts from './layouts/PostLayouts';
 import UserListLayouts from './layouts/UserListLayouts';
@@ -12,6 +12,12 @@ import Col from 'react-bootstrap/Col';
 
 
 function App() {
+
+  const [selectedUserId, setSelectedUserId] = useState('');
+
+  const handleUserSelected = (id) => {
+    console.log(id);
+  };
 
   //Normal API call 
   // useEffect(() => {
@@ -53,7 +59,7 @@ function App() {
       <Container>
         <Row>
           <Col>
-            <UserListLayouts />
+            <UserListLayouts handleUserSelected={handleUserSelected} />
           </Col>
           <Col>
             <PostLayouts />
