@@ -20,7 +20,7 @@ function App() {
     setSelectedUserId(id);
   };
 
-  console.log(selectedUserId);
+  // console.log(selectedUserId);
   //Normal API call 
   // useEffect(() => {
   //   fetch('https://jsonplaceholder.typicode.com/todos/')

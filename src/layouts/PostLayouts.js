@@ -1,26 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
+import PostListLayouts from './postLayouts/PostListLayouts';
 
 
-export default function PostLayouts({selectedUserId}) {
+export default function PostLayouts({ selectedUserId }) {
+    const [postList, setPostList] = useState([]);
     //Axio GET API call 
+    console.log(selectedUserId)
     useEffect(() => {
-        axios.get('https://jsonplaceholder.typicode.com/posts/')
-            .then(function (response) {
-                // handle success
-                console.log(response.data);
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            })
-            .finally(function () {
-                // always executed
-            });
-    }, [
-    ]);
+        if (selectedUserId) {
+            axios.get(`https://jsonplaceholder.typicode.com/posts?userId=${selectedUserId}`)
+                .then(function (response) {
+                    // handle success
+                    console.log(response.data);
+                    setPostList(response.data);
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                })
+                .finally(function () {
+                    // always executed
+                });
+        }
+    }, [selectedUserId]);
     return (
-        <div>PostLayouts</div>
+        <div>
+
+            {
+                postList.length > 0 && postList.map((val, key) => {
+                    return <div key={key}>
+                        <PostListLayouts title={val.title} body={val.body} id={val.id} key={key} />
+                    </div>
+                })
+            }
+        </div>
     )
 }
