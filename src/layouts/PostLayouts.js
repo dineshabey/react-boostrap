@@ -27,10 +27,10 @@ export default function PostLayouts({ selectedUserId }) {
     }, [selectedUserId]);
     return (
         <div>
-
+            <h2>Post List</h2>
             {
                 postList.length > 0 && postList.map((val, key) => {
-                    return <div key={key}>
+                    return <div key={key} style={{ padding: '10px' }}>
                         <PostListLayouts title={val.title} body={val.body} id={val.id} key={key} />
                     </div>
                 })
