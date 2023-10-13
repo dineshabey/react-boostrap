@@ -8,6 +8,7 @@ import UserListLayouts from './layouts/UserListLayouts';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import NavBar from './components/common/NavBar';
 
 
 
@@ -57,6 +58,7 @@ function App() {
   return (
 
     <div style={{}}>
+      <NavBar />
 
       <Container>
         <Row>
