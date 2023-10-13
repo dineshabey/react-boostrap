@@ -5,6 +5,10 @@ import axios from 'axios';
 import PostLayouts from './layouts/PostLayouts';
 import UserListLayouts from './layouts/UserListLayouts';
 
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 
 
 function App() {
@@ -43,10 +47,21 @@ function App() {
 
 
   return (
-    <div className="App">
-      <PostLayouts />
-      <br />
-      <UserListLayouts />
+
+    <div style={{}}>
+
+      <Container>
+        <Row>
+          <Col>
+            <UserListLayouts />
+          </Col>
+          <Col>
+            <PostLayouts />
+          </Col>
+        </Row>
+      </Container>
+
+
     </div>
   );
 }

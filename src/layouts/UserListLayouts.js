@@ -25,16 +25,13 @@ export default function UserListLayouts() {
 
 
     return (
-        <div style={{display:'flex',justifyContent:'center',flexDirection:'column',alignItems:'center'}}>
+        <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
+            <h2>User List</h2>
             {userList.length > 0 && userList.map((val, key) => {
-                return <div key={key} style={{padding:'10px 0px',width:'60%'}}>
-                    <UsersCards name={val.name} id={val.id} email={val.email} username={val.username} companyInfo={val.company.catchPhrase} phone={val.phone}/>
-
-                    {/* <h4>{val.name} # {val.id}</h4>
-                    <p>{val.email} </p> */}
+                return <div key={key} style={{ padding: '10px 0px', width: '60%' }}>
+                    <UsersCards name={val.name} id={val.id} email={val.email} username={val.username} companyInfo={val.company.catchPhrase} phone={val.phone} />
                 </div>
             })}
-
 
 
         </div>
