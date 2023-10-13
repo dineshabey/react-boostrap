@@ -64,7 +64,7 @@ function App() {
             <UserListLayouts handleUserSelected={handleUserSelected} />
           </Col>
           <Col>
-            <PostLayouts />
+            <PostLayouts selectedUserId={selectedUserId} />
           </Col>
         </Row>
       </Container>

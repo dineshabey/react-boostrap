@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import axios from 'axios';
 
 
-export default function PostLayouts() {
+export default function PostLayouts({selectedUserId}) {
     //Axio GET API call 
     useEffect(() => {
         axios.get('https://jsonplaceholder.typicode.com/posts/')
